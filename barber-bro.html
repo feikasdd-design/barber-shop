@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barber Bro — барбершоп у м. Лесная</title>
+<style>
+:root{--bg:#f6f1e9;--fg:#1d1a16;--mu:#6b6258;--cd:#fffaf1;--bd:#ddd2c1;--ac:#9a5a12;--ac2:#ad6e1b;--ac3:#4a2306;--af:#ffffff;--hd:rgba(246,241,233,.88);--glow:rgba(173,110,27,.20);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14110e;--fg:#f3ece1;--mu:#a39a8d;--cd:#1e1a16;--bd:#3a332b;--ac:#d9a441;--ac2:#f0c066;--ac3:#b3741a;--af:#1d1a16;--hd:rgba(20,17,14,.88);--glow:rgba(217,164,65,.18);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14110e;--fg:#f3ece1;--mu:#a39a8d;--cd:#1e1a16;--bd:#3a332b;--ac:#d9a441;--ac2:#f0c066;--ac3:#b3741a;--af:#1d1a16;--hd:rgba(20,17,14,.88);--glow:rgba(217,164,65,.18);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--hd);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);z-index:10}
+.w{max-width:720px;margin:0 auto;padding:0 20px}
+.demo{background:var(--ac);color:var(--af);font-size:13px;text-align:center;padding:8px 12px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--hd);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 17px Georgia,"Times New Roman",serif;letter-spacing:.14em;color:var(--fg);text-decoration:none}
+.hero{position:relative;padding:56px 0 8px}
+.hero::before{content:"";position:absolute;inset:-20px -20px auto;height:320px;background:radial-gradient(60% 70% at 25% 25%,var(--glow),transparent);z-index:-1;pointer-events:none}
+h1{font:700 clamp(46px,13vw,76px)/1 Georgia,"Times New Roman",serif;margin:0 0 14px;letter-spacing:-.02em}
+h1 span{color:var(--ac)}
+h2{font:700 28px Georgia,"Times New Roman",serif;margin:64px 0 18px;letter-spacing:-.01em}
+.lead{color:var(--mu);font-size:19px;margin:0 0 22px;max-width:30em}
+.pole{height:10px;border-radius:99px;margin:0 0 26px;max-width:260px;background:repeating-linear-gradient(45deg,#c0392b 0 12px,#f4f1ec 12px 24px,#2f5fa7 24px 36px,#f4f1ec 36px 48px);background-size:68px 100%;animation:slide 2.4s linear infinite}
+@keyframes slide{to{background-position:68px 0}}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 30px;border-radius:999px;border:2px solid transparent;font:600 16px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,background .2s ease,color .2s ease}
+.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--af);box-shadow:0 6px 18px var(--glow)}
+.s{background:transparent;color:var(--ac);border-color:var(--ac)}
+.sm{padding:11px 20px;font-size:14px}
+@media(hover:hover){.b:hover{transform:scale(1.07);box-shadow:0 12px 28px var(--glow)}.s:hover{background:var(--glow)}}
+.b:active{transform:scale(.95);box-shadow:none;transition-duration:.08s}
+.p:active{background:var(--ac3)}
+.s:active{background:var(--ac);color:var(--af)}
+.p.done{background:linear-gradient(135deg,#2f8f4e,#3fae63);color:#fff}
+.b:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0 0}
+.stat{background:var(--cd);border:1px solid var(--bd);border-radius:18px;padding:16px 8px;text-align:center}
+.stat b{display:block;font:700 28px Georgia,serif;color:var(--ac)}
+.stat span{font-size:12px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.sv{background:var(--cd);border:1px solid var(--bd);border-radius:22px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+@media(hover:hover){.sv:hover{transform:translateY(-5px);box-shadow:0 14px 30px var(--glow)}}
+.sv h3{font:600 17px/1.3 system-ui,sans-serif;margin:0 0 14px}
+.pr{font:700 32px Georgia,serif;color:var(--ac)}
+.pr s{font:400 14px system-ui,sans-serif;color:var(--mu);margin-left:8px}
+.tag{display:inline-block;font-size:12px;font-weight:600;background:var(--glow);color:var(--ac);padding:3px 10px;border-radius:99px;margin-bottom:10px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:22px;padding:24px}
+.card p{margin:0 0 10px}
+label{display:block;font-size:14px;color:var(--mu);margin:0 0 16px}
+input,select{display:block;width:100%;margin-top:6px;padding:14px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--fg);font:16px system-ui,sans-serif;transition:border-color .2s}
+input:hover,select:hover{border-color:var(--ac)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+textarea{display:block;width:100%;height:96px;resize:none;padding:14px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--fg);font:15px system-ui,sans-serif}
+#out{margin-top:22px;padding-top:22px;border-top:1px solid var(--bd)}
+.note{color:var(--mu);font-size:14px;margin:12px 0}
+a{color:var(--ac)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+footer{color:var(--mu);font-size:13px;margin:56px 0 28px;border-top:1px solid var(--bd);padding-top:20px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<div class="demo">Демо-сайт для «Barber Bro». Всё можно поменять под вас</div>
+<header class="top"><div class="w bar"><a class="logo" href="#top">BARBER BRO</a><a class="b p sm" href="#book">Записаться</a></div></header>
+<main class="w" id="top">
+<section class="hero">
+<h1>Barber <span>Bro</span></h1>
+<div class="pole"></div>
+<p class="lead">Мужские стрижки и борода у метро Лесная. Запись онлайн за минуту.</p>
+<div class="btns"><a class="b p" href="#book">Записаться онлайн</a><a class="b s" href="tel:+79215818584">Позвонить</a></div>
+<div class="stats">
+<div class="stat"><b>5.0</b><span>рейтинг на Яндекс Картах</span></div>
+<div class="stat"><b>228</b><span>оценок клиентов</span></div>
+<div class="stat"><b>450 м</b><span>до метро Лесная</span></div>
+</div>
+</section>
+
+<h2 class="rv">Услуги и цены</h2>
+<div class="grid rv">
+<div class="sv"><span class="tag">Акция</span><h3>Мужская стрижка</h3><div class="pr">1 300 ₽<s>1 500 ₽</s></div></div>
+<div class="sv"><h3>Стрижка + борода</h3><div class="pr">2 000 ₽</div></div>
+<div class="sv"><h3>Оформление бороды</h3><div class="pr">1 000 ₽</div></div>
+</div>
+
+<h2 id="book" class="rv">Онлайн-запись</h2>
+<form class="card rv" id="f">
+<label>Услуга
+<select name="service" required>
+<option>Мужская стрижка</option>
+<option>Стрижка + борода</option>
+<option>Оформление бороды</option>
+</select></label>
+<div class="two">
+<label>Дата<input type="date" name="date" id="date" required></label>
+<label>Время<input type="time" name="time"></label>
+</div>
+<label>Ваше имя<input type="text" name="name" autocomplete="given-name" required placeholder="Как к вам обращаться"></label>
+<button class="b p" id="sub" type="submit">Подготовить заявку</button>
+<div id="out" hidden>
+<p id="st" class="note"></p>
+<textarea id="msg" readonly></textarea>
+<div class="btns" style="margin-top:14px"><a class="b p" id="go" href="https://t.me/Barberbro2025">Открыть Telegram</a></div>
+</div>
+</form>
+<p class="note">Мастер подтвердит время в Telegram или по телефону.</p>
+
+<h2 class="rv">Как нас найти</h2>
+<div class="card rv"><p><b>Санкт-Петербург, Кантемировская ул., 35, 1 этаж</b></p>
+<p style="color:var(--mu)">Пешком около 450 м от метро Лесная.</p>
+<div class="btns" style="margin-top:18px"><a class="b s" href="https://yandex.com/maps/org/barber_bro/89280353338/">Как добраться</a><a class="b s" href="tel:+79215818584">+7 (921) 581-85-84</a></div></div>
+
+<footer>Демо-версия. Услуги и цены взяты из карточки на картах, фото и описание добавим по вашим материалам.</footer>
+</main>
+<script>
+document.addEventListener('touchstart',function(){},{passive:true});
+const io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12}):null;
+document.querySelectorAll('.rv').forEach(function(el){if(io){io.observe(el);}else{el.classList.add('in');}});
+const f=document.getElementById('f'),out=document.getElementById('out'),msg=document.getElementById('msg'),go=document.getElementById('go'),st=document.getElementById('st'),d=document.getElementById('date'),sub=document.getElementById('sub');
+const t=new Date();
+d.min=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+f.addEventListener('input',function(){sub.classList.remove('done');sub.textContent='Подготовить заявку';});
+f.addEventListener('submit',async function(e){
+  e.preventDefault();
+  const v=new FormData(f);
+  const date=new Date(v.get('date')+'T00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
+  const time=v.get('time');
+  const text='Здравствуйте! Хочу записаться: '+v.get('service')+', '+date+(time?' в '+time:'')+'. Меня зовут '+v.get('name').trim()+'.';
+  msg.value=text;
+  go.href='https://t.me/Barberbro2025?text='+encodeURIComponent(text);
+  out.hidden=false;
+  sub.classList.add('done');sub.textContent='Заявка готова ✓';
+  try{await navigator.clipboard.writeText(text);st.textContent='Текст заявки скопирован. Откройте Telegram и вставьте его в чат.';}
+  catch(err){st.textContent='Скопируйте текст заявки ниже и отправьте его в Telegram.';}
+});
+</script>
+</body></html>
